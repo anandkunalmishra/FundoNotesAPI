@@ -1238,6 +1238,23 @@
             "rid": "win"
           }
         }
+      },
+      "Common_Layer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "7.0.16",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Common_Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common_Layer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -3908,10 +3925,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Common_Layer/1.0.0": {
+      "type": "project",
+      "path": "../Common_Layer/Common_Layer.csproj",
+      "msbuildProject": "../Common_Layer/Common_Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Common_Layer >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.16",
       "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
@@ -3947,7 +3970,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj": {
+              "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
