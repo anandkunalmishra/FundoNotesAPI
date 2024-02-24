@@ -1,10 +1,10 @@
 ﻿using System;
-using Common_Layer.RequestModel;
 using Repository_Layer.Entity;
+using Common_Layer.RequestModel;
 
-namespace Repository_Layer.Interfaces
+namespace Manager_Layer.Interfaces
 {
-	public interface IUserRepository
+	public interface IUserManager
 	{
 		public UserEntity UserRegisteration(RegisterModel model);
 	}
