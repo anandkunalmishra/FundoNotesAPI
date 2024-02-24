@@ -23,6 +23,12 @@ namespace Repository_Layer.Services
 			entity.lName = model.lName;
 			entity.userEmail = model.userEmail;
 			entity.userPassword = model.userPassword;
+
+			//add the entity to userTable database
+			context.UserTable.Add(entity);
+			context.SaveChanges();
+
+
 			return entity;
 		}
 

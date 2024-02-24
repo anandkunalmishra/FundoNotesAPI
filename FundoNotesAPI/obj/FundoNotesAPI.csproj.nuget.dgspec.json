@@ -96,6 +96,12 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj": {
+                "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj"
+              },
+              "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj": {
+                "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj"
+              },
               "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj": {
                 "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj"
               }
@@ -139,6 +145,81 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.313/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj",
+        "projectName": "Manager_Layer",
+        "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj",
+        "packagesPath": "/Users/anandkunalmishra/.nuget/packages/",
+        "outputPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/anandkunalmishra/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.313/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj": {
+                "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj"
+              },
+              "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj": {
+                "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.16, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

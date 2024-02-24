@@ -9,6 +9,6 @@ namespace Repository_Layer.Context
     public class FundoContext : DbContext
     {
         public FundoContext(DbContextOptions options) : base(options) { }
-        DbSet<UserEntity> UserTable { get; set; }
+        public DbSet<UserEntity> UserTable { get; set; }
     }
 }

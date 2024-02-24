@@ -2,33 +2,33 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/UserController.cs">
     <Files>
-      <File FileName="Repository_Layer/Entity/UserEntity.cs" />
       <File FileName="Repository_Layer/Context/FundoContext.cs" />
-      <File FileName="FundoNotesAPI/Program.cs" />
-      <File FileName="Common_Layer/RequestModel/RegisterModel.cs" />
-      <File FileName="Common_Layer/ResponseModel/ResModel.cs" Line="1" Column="1" />
-      <File FileName="FundoNotesAPI/appsettings.json" Line="8" Column="1" />
+      <File FileName="FundoNotesAPI/WeatherForecast.cs" />
+      <File FileName="FundoNotesAPI/Program.cs" Line="28" Column="18" />
+      <File FileName="Repository_Layer/Services/UserRepository.cs" />
+      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="10" Column="17" />
+      <File FileName="FundoNotesAPI/Properties/launchSettings.json" Line="29" Column="9" />
+      <File FileName="FundoNotesAPI/appsettings.Development.json" />
+      <File FileName="Common_Layer/RequestModel/RegisterModel.cs" Line="10" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FundoNotesAPI" expanded="True">
             <Node name="FundoNotesAPI" expanded="True">
-              <Node name="appsettings.json" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UserController.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="Repository_Layer" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Common__Layer FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Manager__Layer FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Repository__Layer FirstBuild="True" />
 </Properties>
