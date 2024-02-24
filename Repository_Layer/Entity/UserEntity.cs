@@ -12,7 +12,6 @@ namespace Repository_Layer.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         public int userId { get; set; }
 
         public string fName { get; set; }

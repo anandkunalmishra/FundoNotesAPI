@@ -1238,6 +1238,63 @@
             "rid": "win"
           }
         }
+      },
+      "Common_Layer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "7.0.16",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Common_Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common_Layer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Manager_Layer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common_Layer": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "7.0.16",
+          "Repository_Layer": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Manager_Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Manager_Layer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Repository_Layer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Common_Layer": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "7.0.16",
+          "Microsoft.EntityFrameworkCore": "7.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository_Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository_Layer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -3908,16 +3965,34 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Common_Layer/1.0.0": {
+      "type": "project",
+      "path": "../Common_Layer/Common_Layer.csproj",
+      "msbuildProject": "../Common_Layer/Common_Layer.csproj"
+    },
+    "Manager_Layer/1.0.0": {
+      "type": "project",
+      "path": "../Manager_Layer/Manager_Layer.csproj",
+      "msbuildProject": "../Manager_Layer/Manager_Layer.csproj"
+    },
+    "Repository_Layer/1.0.0": {
+      "type": "project",
+      "path": "../Repository_Layer/Repository_Layer.csproj",
+      "msbuildProject": "../Repository_Layer/Repository_Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Common_Layer >= 1.0.0",
+      "Manager_Layer >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.16",
       "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
+      "Repository_Layer >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3947,7 +4022,17 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj": {
+              "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Common_Layer/Common_Layer.csproj"
+            },
+            "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj": {
+              "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj"
+            },
+            "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj": {
+              "projectPath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
