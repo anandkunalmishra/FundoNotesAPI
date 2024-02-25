@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Common_Layer.RequestModel;
 using Common_Layer.ResponseModel;
 using Repository_Layer.Entity;
+using Azure;
 
 namespace FundoNotesAPI.Controllers
 {
@@ -21,15 +22,45 @@ namespace FundoNotesAPI.Controllers
 		[Route("reg")]
 		public ActionResult Register(RegisterModel model)
 		{
-			var response = userManager.UserRegisteration(model);
+			try
+			{
+                var response = userManager.UserRegisteration(model);
 
-			if (response != null)
+                if (response != null)
+                {
+                    return Ok(new ResModel<UserEntity> { Success = true, Message = "Registered Successfully", Data = response });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<UserEntity> { Success = false, Message = "Registration Failed", Data = response });
+                }
+            }
+			catch(Exception ex)
 			{
-				return Ok(new ResModel<UserEntity> { Success = true, Message = "Registered Successfully", Data = response });
+				return BadRequest(new ResModel<UserEntity> { Success = false, Message = ex.Message, Data = null });
 			}
-			else
+			
+		}
+
+		[HttpPost]
+		[Route("login")]
+		public ActionResult Login(LoginModel model)
+		{
+			try
 			{
-				return BadRequest(new ResModel<UserEntity> { Success = false,Message="Registration Failed",Data = response});
+                var response = userManager.UserLogin(model);
+				if (response != null)
+				{
+					return Ok(new ResModel<UserEntity> { Success = true, Message = "Login Successful", Data = response });
+				}
+				else
+				{
+					return BadRequest(new ResModel<UserEntity> { Success = false, Message = "Login Unsuccessful", Data = response });
+				}
+            }
+			catch(Exception ex)
+			{
+				return BadRequest(new ResModel<UserEntity> { Success = false, Message = ex.Message, Data = null });
 			}
 		}
 

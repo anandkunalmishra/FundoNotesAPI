@@ -1,19 +1,16 @@
 ﻿<Properties StartupConfiguration="{695C7117-EDBE-487C-AFAF-58A7781A2AD7}|https">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/UserController.cs">
     <Files>
       <File FileName="Repository_Layer/Context/FundoContext.cs" />
-      <File FileName="FundoNotesAPI/WeatherForecast.cs" />
-      <File FileName="FundoNotesAPI/Program.cs" Line="28" Column="18" />
+      <File FileName="FundoNotesAPI/Program.cs" />
       <File FileName="Repository_Layer/Services/UserRepository.cs" />
-      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="10" Column="17" />
-      <File FileName="FundoNotesAPI/Properties/launchSettings.json" Line="29" Column="9" />
+      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="34" Column="4" />
+      <File FileName="FundoNotesAPI/Properties/launchSettings.json" />
       <File FileName="FundoNotesAPI/appsettings.Development.json" />
-      <File FileName="Common_Layer/RequestModel/RegisterModel.cs" Line="10" Column="32" />
+      <File FileName="Common_Layer/RequestModel/RegisterModel.cs" />
+      <File FileName="Repository_Layer/Entity/UserEntity.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,11 +21,17 @@
                 <Node name="UserController.cs" selected="True" />
               </Node>
             </Node>
+            <Node name="Repository_Layer" expanded="True">
+              <Node name="Context" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

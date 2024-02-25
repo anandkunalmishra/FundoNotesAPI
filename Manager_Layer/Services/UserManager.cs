@@ -15,7 +15,25 @@ namespace Manager_Layer.Services
 
         public UserEntity UserRegisteration(RegisterModel model)
 		{
-			return repository.UserRegisteration(model);
+			try
+			{
+				return repository.UserRegisteration(model);
+			}
+			catch
+			{
+				throw new Exception("Could not Register");
+			}
+		}
+        public UserEntity UserLogin(LoginModel model)
+        {
+			try
+			{
+				return repository.UserLogin(model);
+			}
+			catch
+			{
+				throw new Exception("Could not Login");
+			}
 		}
     }
 }
