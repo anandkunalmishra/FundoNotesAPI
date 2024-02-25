@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QoJEuLhbfSmJX4jvSyP0oKkNjEsiobePDoi2oRi7NOzrDye7OHyP9r9TAOv8UzLymQNLi12CItfWj6qoiDntmQ==",
+  "dgSpecHash": "iplGgzC+JR0TwSobcgk7Eqxm4jgD7N1WH5j936zkVOqTnGye9d016EK4iEyAGDcuBfJ/gHawYWbbpq3peDJfWg==",
   "success": true,
   "projectFilePath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Manager_Layer/Manager_Layer.csproj",
   "expectedPackageFiles": [
     "/Users/anandkunalmishra/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
+    "/Users/anandkunalmishra/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.aspnetcore.openapi/7.0.16/microsoft.aspnetcore.openapi.7.0.16.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",

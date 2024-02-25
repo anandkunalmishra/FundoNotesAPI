@@ -7,6 +7,8 @@ namespace Manager_Layer.Interfaces
 	public interface IUserManager
 	{
 		public UserEntity UserRegisteration(RegisterModel model);
-	}
+		public UserEntity UserLogin(LoginModel model);
+
+    }
 }
 
