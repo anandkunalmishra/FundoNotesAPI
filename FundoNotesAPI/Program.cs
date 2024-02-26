@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(c => {
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
     c.IgnoreObsoleteActions();
     c.IgnoreObsoleteProperties();
-    c.CustomSchemaIds(type => type.FullName);
+    c.CustomSchemaIds(type => type.Name);
 });
 
 builder.Services.AddTransient<IUserManager, UserManager>();

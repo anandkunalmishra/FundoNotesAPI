@@ -49,10 +49,20 @@ namespace FundoNotesAPI.Controllers
 			try
 			{
                 var response = userManager.UserLogin(model);
+
+
 				if (response != null)
 				{
-					return Ok(new ResModel<UserEntity> { Success = true, Message = "Login Successful", Data = response });
-				}
+					//To allow only certain values in the response
+					var responseData = new UserEntity
+					{
+						fName = response.fName,
+						lName = response.lName,
+						userEmail = response.userEmail
+					};
+
+					return Ok(new ResModel<UserEntity> { Success = true, Message = "Login Successful", Data = responseData });
+                }
 				else
 				{
 					return BadRequest(new ResModel<UserEntity> { Success = false, Message = "Login Unsuccessful", Data = response });
