@@ -50,10 +50,25 @@ namespace FundoNotesAPI.Controllers
 			try
 			{
                 var response = userManager.UserLogin(model);
+
+
 				if (response != null)
 				{
+<<<<<<< HEAD
 					return Ok(new ResModel<String> { Success = true, Message = "Login Successful", Data =  userManager.GenerateToken(response)});
 				}
+=======
+					//To allow only certain values in the response
+					var responseData = new UserEntity
+					{
+						fName = response.fName,
+						lName = response.lName,
+						userEmail = response.userEmail
+					};
+
+					return Ok(new ResModel<UserEntity> { Success = true, Message = "Login Successful", Data = responseData });
+                }
+>>>>>>> refs/remotes/origin/Login_Method_Creation
 				else
 				{
 					return BadRequest(new ResModel<UserEntity> { Success = false, Message = "Login Unsuccessful", Data = response });
