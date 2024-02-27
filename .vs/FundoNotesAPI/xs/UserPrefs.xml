@@ -1,37 +1,31 @@
 ﻿<Properties StartupConfiguration="{695C7117-EDBE-487C-AFAF-58A7781A2AD7}|https">
-  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/UserController.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Services/UserRepository.cs">
     <Files>
-      <File FileName="Repository_Layer/Context/FundoContext.cs" />
-      <File FileName="FundoNotesAPI/Program.cs" />
-      <File FileName="Repository_Layer/Services/UserRepository.cs" />
-      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="34" Column="4" />
-      <File FileName="FundoNotesAPI/Properties/launchSettings.json" />
-      <File FileName="FundoNotesAPI/appsettings.Development.json" />
-      <File FileName="Common_Layer/RequestModel/RegisterModel.cs" />
-      <File FileName="Repository_Layer/Entity/UserEntity.cs" />
+      <File FileName="Repository_Layer/Services/UserRepository.cs" Line="13" Column="19" />
+      <File FileName="FundoNotesAPI/appsettings.json" Line="12" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FundoNotesAPI" expanded="True">
-            <Node name="FundoNotesAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UserController.cs" selected="True" />
-              </Node>
+            <Node name="FundoNotesAPI">
+              <Node name="Controllers" expanded="True" />
             </Node>
-            <Node name="Repository_Layer" expanded="True">
-              <Node name="Context" expanded="True" />
+            <Node name="Repository_Layer">
+              <Node name="Services">
+                <Node name="UserRepository.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

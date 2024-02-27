@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Common_Layer.RequestModel;
 using Common_Layer.ResponseModel;
 using Repository_Layer.Entity;
+using Repository_Layer.Interfaces;
 using Azure;
 
 namespace FundoNotesAPI.Controllers
@@ -51,7 +52,7 @@ namespace FundoNotesAPI.Controllers
                 var response = userManager.UserLogin(model);
 				if (response != null)
 				{
-					return Ok(new ResModel<UserEntity> { Success = true, Message = "Login Successful", Data = response });
+					return Ok(new ResModel<String> { Success = true, Message = "Login Successful", Data =  userManager.GenerateToken(response)});
 				}
 				else
 				{

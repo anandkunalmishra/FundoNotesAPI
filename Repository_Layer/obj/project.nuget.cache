@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0YJ1gbzctbRsG8p/EnM2/CQxUhYbJhAhwNnS85hCR/4IwIONtP0yd8nu1BFtihFmo514j+qWzNVrwyWikeDkVw==",
+  "dgSpecHash": "JxSyjX3uxuONEet5Qo+rsmk9WRi8ZTD0YKa6WDdQaoIZcndOlk1TBUm9krCSvhK0suI6pP8KDo3K5VRdV9ShAA==",
   "success": true,
   "projectFilePath": "/Users/anandkunalmishra/Projects/FundoNotesAPI/Repository_Layer/Repository_Layer.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/anandkunalmishra/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/anandkunalmishra/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.0/microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.aspnetcore.openapi/7.0.16/microsoft.aspnetcore.openapi.7.0.16.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/anandkunalmishra/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
