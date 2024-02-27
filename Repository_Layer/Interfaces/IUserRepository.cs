@@ -6,9 +6,11 @@ namespace Repository_Layer.Interfaces
 {
 	public interface IUserRepository
 	{
-		public UserEntity UserRegisteration(RegisterModel model);
-		public UserEntity UserLogin(LoginModel model);
-		public string GenerateToken(UserEntity user);
+		public UserEntity UserRegisteration(RegisterModel model); 
+		public string UserLogin(LoginModel model);
+		public ForgetPasswordModel ForgetPassword(string Email);
+		public bool ResetPassword(string Email, ResetPassword resetPasswordModel);
+        public bool checker(string Email);
     }
 }
 

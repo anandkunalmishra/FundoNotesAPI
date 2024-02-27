@@ -1,9 +1,7 @@
-﻿using System;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using Repository_Layer.Interfaces;
 using Repository_Layer.Context;
 using Common_Layer.RequestModel;
-using Repository_Layer.Services;
 using Repository_Layer.Entity;
 using System.Security.Claims;
 using System.Text;
@@ -23,6 +21,16 @@ namespace Repository_Layer.Services
 			this.context = context;
 			this.config = config;
 		}
+
+		public bool checker(string Email)
+		{
+			if(context.UserTable.ToList().Find(x=>x.userEmail == Email)!=null)
+			{
+				return true;
+			}
+			return false;
+		}
+
         public UserEntity UserRegisteration(RegisterModel model)
 		{
             if (context.UserTable.Any(x => x.userEmail == model.userEmail))
@@ -56,13 +64,14 @@ namespace Repository_Layer.Services
 			
 			return entity;
 		}
-        public UserEntity UserLogin(LoginModel model)
+        public string UserLogin(LoginModel model)
 		{
 			UserEntity user = context.UserTable.FirstOrDefault(x => x.userEmail == model.userEmail);
 			if (user != null)
 			{
 				if (objEncrypt.matchPassword(model.userPassword, user.userPassword)){
-					return user;
+					var token = GenerateToken(user.userEmail,user.userId);
+					return token;
 				}
 				else
 				{
@@ -75,32 +84,55 @@ namespace Repository_Layer.Services
 			}
 		}
 
-		public string GenerateToken(UserEntity user)
-		{
-			if (config == null) throw new Exception("Configuration is not inititalized");
-			else
-			{
-                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
-                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-                var claims = new[]
-                {
-                new Claim(ClaimTypes.NameIdentifier, user.userId.ToString()),
-                new Claim(ClaimTypes.Email, user.userEmail)
+        private string GenerateToken(string Email, int UserId)
+        {
+            //Defining a Security Key 
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim("Email",Email),
+                new Claim("UserId", UserId.ToString())
             };
+            var token = new JwtSecurityToken(
+                config["Jwt:Issuer"],
+                config["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(1), // Token expiration time
+                signingCredentials: credentials
+            );
 
-                var token = new JwtSecurityToken(
-                    config["Jwt:Issuer"],
-                    config["Jwt:Audience"],
-                    claims: claims,
-                    expires: DateTime.Now.AddHours(5),
-                    signingCredentials: credentials);
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenString = tokenHandler.WriteToken(token);
 
-                return new JwtSecurityTokenHandler().WriteToken(token);
-            }
-            
+            return tokenString;
+
+        }
+        public ForgetPasswordModel ForgetPassword(string Email)
+		{
+			UserEntity User = context.UserTable.FirstOrDefault(x => x.userEmail == Email);
+			ForgetPasswordModel forgetPassword = new ForgetPasswordModel();
+			forgetPassword.userEmail = User.userEmail;
+			forgetPassword.userId = User.userId;
+			forgetPassword.token = GenerateToken(User.userEmail,User.userId);
+
+			return forgetPassword;
+
 		}
 
+		public bool ResetPassword(string Email,ResetPassword resetPasswordModel)
+		{
+			UserEntity User = context.UserTable.FirstOrDefault(x => x.userEmail == Email);
+
+			if (User != null)
+			{
+				User.userPassword = objEncrypt.encrypt(resetPasswordModel.userPassword);
+				context.SaveChanges();
+				return true;
+			}
+			return false;
+		}
+	
     }
 }
 
