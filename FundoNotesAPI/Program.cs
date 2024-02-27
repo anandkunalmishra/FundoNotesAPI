@@ -17,6 +17,7 @@ var config = builder.Configuration;
 builder.Services.AddControllers();
 builder.Services.AddDbContext<FundoContext>(x => x.UseSqlServer(builder.Configuration["ConnectionStrings:FundoAppdb"]));
 
+//source: https://www.infoworld.com/article/3650668/implement-authorization-for-swagger-in-aspnet-core.html
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -55,6 +56,7 @@ builder.Services.AddMassTransitHostedService();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+//source: https://www.infoworld.com/article/3650668/implement-authorization-for-swagger-in-aspnet-core.html
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "FundoNotes API", Version = "v1" });

@@ -1,5 +1,6 @@
 ﻿using Manager_Layer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Common_Layer.RequestModel;
 using Common_Layer.ResponseModel;
 using Repository_Layer.Entity;
@@ -98,10 +99,29 @@ namespace FundoNotesAPI.Controllers
 			
 		}
 
-		//[HttpPost]
-		//[Route("resetPass")]
+		[Authorize]
+		[HttpPost]
+		[Route("resetPass")]
+		public ActionResult ResetPassword(ResetPasswordModel reset) 
+		{
+			try
+			{
+				string Email = User.FindFirst("Email").Value;
+                if (userManager.ResetPassword(Email,reset))
+                {
+					return Ok(new ResModel<bool> { Success = true,Message="Password Reset successful",Data=true});
+                }
+                else
+                {
+					return BadRequest(new ResModel<bool> { Success = false, Message = "Failed to reset", Data = false }); ;
+                }
+            }
+			catch(Exception ex)
+			{
+				return BadRequest(new ResModel<bool> {Success=false,Message=ex.Message,Data=false });
+			}
+		}
 
-
-    }
+	}
 }
 

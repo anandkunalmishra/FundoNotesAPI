@@ -117,16 +117,15 @@ namespace Repository_Layer.Services
 			forgetPassword.token = GenerateToken(User.userEmail,User.userId);
 
 			return forgetPassword;
-
 		}
 
-		public bool ResetPassword(string Email,ResetPassword resetPasswordModel)
+		public bool ResetPassword(string Email,ResetPasswordModel reset)
 		{
 			UserEntity User = context.UserTable.FirstOrDefault(x => x.userEmail == Email);
 
 			if (User != null)
 			{
-				User.userPassword = objEncrypt.encrypt(resetPasswordModel.userPassword);
+				User.userPassword = objEncrypt.encrypt(reset.userPassword);
 				context.SaveChanges();
 				return true;
 			}
