@@ -8,7 +8,7 @@ namespace Manager_Layer.Interfaces
 	{
 		public UserEntity UserRegisteration(RegisterModel model);
 		public UserEntity UserLogin(LoginModel model);
-
+		public string GenerateToken(UserEntity user);
     }
 }
 

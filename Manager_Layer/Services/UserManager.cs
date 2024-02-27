@@ -2,7 +2,7 @@
 using Common_Layer.RequestModel;
 using Manager_Layer.Interfaces;
 using Repository_Layer.Entity;
-using Repository_Layer.Interfaces;
+using Repository_Layer.Interfaces; 
 namespace Manager_Layer.Services
 {
 	public class UserManager:IUserManager
@@ -20,6 +20,11 @@ namespace Manager_Layer.Services
         public UserEntity UserLogin(LoginModel model)
         {
 			return repository.UserLogin(model);
+		}
+
+        public string GenerateToken(UserEntity user)
+		{
+			return repository.GenerateToken(user);
 		}
     }
 }

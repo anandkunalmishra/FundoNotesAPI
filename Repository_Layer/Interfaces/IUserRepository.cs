@@ -7,7 +7,8 @@ namespace Repository_Layer.Interfaces
 	public interface IUserRepository
 	{
 		public UserEntity UserRegisteration(RegisterModel model);
-        public UserEntity UserLogin(LoginModel model);
+		public UserEntity UserLogin(LoginModel model);
+		public string GenerateToken(UserEntity user);
     }
 }
 
