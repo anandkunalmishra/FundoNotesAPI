@@ -87,6 +87,8 @@ builder.Services.AddSwaggerGen(option =>
 
 builder.Services.AddTransient<IUserManager, UserManager>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<INoteManager, NoteManager>();
+builder.Services.AddTransient<INoteRepository, NoteRepository>();
 
 
 var app = builder.Build();

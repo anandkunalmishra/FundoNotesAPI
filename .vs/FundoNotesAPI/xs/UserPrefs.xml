@@ -1,25 +1,50 @@
 ﻿<Properties StartupConfiguration="{695C7117-EDBE-487C-AFAF-58A7781A2AD7}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Services/UserRepository.cs">
+  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/UserController.cs">
     <Files>
-      <File FileName="Repository_Layer/Services/UserRepository.cs" Line="107" Column="39" />
-      <File FileName="FundoNotesAPI/appsettings.json" Line="19" Column="1" />
-      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="51" Column="5" />
-      <File FileName="Repository_Layer/Interfaces/IUserRepository.cs" Line="13" Column="2" />
-      <File FileName="Manager_Layer/Services/UserManager.cs" Line="15" Column="1" />
-      <File FileName="FundoNotesAPI/Program.cs" Line="28" Column="1" />
-      <File FileName="Common_Layer/ResetPasswordModel/ResetPassword.cs" Line="3" Column="2" />
+      <File FileName="FundoNotesAPI/Program.cs" />
+      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="Repository_Layer/Services/UserRepository.cs" />
+      <File FileName="Common_Layer/RequestModel/ResetPasswordModel.cs" />
+      <File FileName="Repository_Layer/Interfaces/IUserRepository.cs" />
+      <File FileName="Manager_Layer/Interfaces/IUserManager.cs" />
+      <File FileName="Manager_Layer/Services/UserManager.cs" />
+      <File FileName="Common_Layer/ResponseModel/ResModel.cs" />
+      <File FileName="Repository_Layer/Entity/NoteEntity.cs" />
+      <File FileName="Repository_Layer/Interfaces/INoteRepository.cs" />
+      <File FileName="Repository_Layer/Services/NoteRepository.cs" />
+      <File FileName="Common_Layer/RequestModel/AddNotesModel.cs" />
+      <File FileName="Common_Layer/RequestModel/DeleteNotesModel.cs" />
+      <File FileName="Manager_Layer/Services/NoteManager.cs" />
+      <File FileName="Manager_Layer/Interfaces/INoteManager.cs" />
+      <File FileName="FundoNotesAPI/Controllers/NoteController.cs" />
+      <File FileName="Repository_Layer/Entity/InventoryEntity.cs" />
+      <File FileName="Repository_Layer/Context/InventoryContext.cs" />
+      <File FileName="Repository_Layer/Context/FundoContext.cs" />
+      <File FileName="FundoNotesAPI/appsettings.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__" />
+        <State name="__root__">
+          <Node name="FundoNotesAPI" expanded="True">
+            <Node name="FundoNotesAPI" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UserController.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Repository_Layer" expanded="True">
+              <Node name="Context" expanded="True" />
+              <Node name="Entity" expanded="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
