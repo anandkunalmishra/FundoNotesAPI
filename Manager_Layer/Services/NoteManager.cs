@@ -25,6 +25,11 @@ namespace Manager_Layer.Services
 			return noteRepository.DeleteNote(NoteId);
 		}
 
+        public List<NoteEntity> GetAllNotes(int UserId)
+		{
+			return noteRepository.GetAllNotes(UserId);
+		}
+
     }
 }
 

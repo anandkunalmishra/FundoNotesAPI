@@ -9,7 +9,7 @@ using Repository_Layer.Entity;
 namespace FundoNotesAPI.Controllers
 {
 	[ApiController]
-	[Route("note/[controller]")]
+	[Route("api/[controller]")]
 	public class NoteController:ControllerBase
 	{
 		public readonly INoteManager noteManager;
@@ -55,7 +55,7 @@ namespace FundoNotesAPI.Controllers
 				if (userId!=null)
 				{
 					var response = noteManager.DeleteNote(NoteId);
-					return BadRequest(new ResModel<bool> { Success = true, Message = "Delete Successful", Data = true });
+					return Ok(new ResModel<bool> { Success = true, Message = "Delete Successful", Data = true });
 				}
 				else
 				{
@@ -67,6 +67,31 @@ namespace FundoNotesAPI.Controllers
                 return BadRequest(new ResModel<bool> { Success = true, Message = ex.Message, Data = false });
             }
 		}
+
+        [Authorize]
+        [HttpGet]
+        [Route("getNotes")]
+        public ActionResult GetAllNotes()
+		{
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.GetAllNotes(userId);
+                    return Ok(new ResModel<List<NoteEntity>> { Success = true, Message = "Display Successful", Data = response });
+                }
+                else
+                {
+                    return BadRequest(new ResModel<List<NoteEntity>> { Success = true, Message = "Display Unsuccessful", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<List<NoteEntity>> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
+
 
 
 

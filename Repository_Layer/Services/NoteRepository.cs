@@ -70,6 +70,23 @@ namespace Repository_Layer.Services
                 throw;
             }
         }
+
+        public List<NoteEntity> GetAllNotes(int UserId)
+        {
+            try
+            {
+                var notes = context.NotesTable.Where(x => x.userId == UserId).ToList();
+                if (notes != null) return notes;
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
 
