@@ -42,7 +42,11 @@ namespace RepositoryLayer.Migrations
                     b.Property<bool>("IsTrash")
                         .HasColumnType("bit");
 
-                    b.Property<string>("NoteText")
+                    b.Property<string>("NoteDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NoteTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

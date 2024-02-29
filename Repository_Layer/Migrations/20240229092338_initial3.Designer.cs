@@ -12,8 +12,8 @@ using Repository_Layer.Context;
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(FundoContext))]
-    [Migration("20240227163530_addednotesAPP")]
-    partial class addednotesAPP
+    [Migration("20240229092338_initial3")]
+    partial class initial3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,9 @@ namespace RepositoryLayer.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsArchive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsPin")
                         .HasColumnType("bit");

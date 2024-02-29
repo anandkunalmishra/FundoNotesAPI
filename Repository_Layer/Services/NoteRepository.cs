@@ -25,12 +25,13 @@ namespace Repository_Layer.Services
                 NoteEntity note = new NoteEntity
                 {
                     userId = user.userId,
-                    NoteText = addNotes.NoteText,
-                    background = addNotes.background,
-                    IsPin = addNotes.IsPin,
-                    IsTrash = addNotes.IsTrash,
-                    colour = addNotes.colour,
-                    IsArchive = addNotes.IsArchive,
+                    NoteTitle = addNotes.NoteTitle,
+                    NoteDescription = addNotes.NoteDescription,
+                    background = "",
+                    IsPin = false,
+                    IsTrash = false,
+                    colour = "#FFFFFF",
+                    IsArchive = false,
                     UpdatedAt = DateTime.UtcNow,
                     CreatedAt = DateTime.UtcNow
                 };
@@ -50,6 +51,24 @@ namespace Repository_Layer.Services
                 throw new Exception("User is not registered");
             }
             
+        }
+        public bool DeleteNote(int NoteId)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    context.NotesTable.Remove(note);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

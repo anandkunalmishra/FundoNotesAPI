@@ -7,7 +7,7 @@ namespace Manager_Layer.Interfaces
 	public interface INoteManager
 	{
         public NoteEntity NoteCreation(int userId,AddNotesModel addNotes);
-
+        public bool DeleteNote(int NoteId);
     }
 }
 

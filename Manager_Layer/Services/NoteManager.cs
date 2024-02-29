@@ -9,6 +9,7 @@ namespace Manager_Layer.Services
 	public class NoteManager:INoteManager
 	{
 		public readonly INoteRepository noteRepository;
+
 		public NoteManager(INoteRepository noteRepository)
 		{
 			this.noteRepository = noteRepository;
@@ -18,6 +19,12 @@ namespace Manager_Layer.Services
 		{
 			return noteRepository.NoteCreation(userId,addNotes);
 		}
-	}
+
+        public bool DeleteNote(int NoteId)
+		{
+			return noteRepository.DeleteNote(NoteId);
+		}
+
+    }
 }
 

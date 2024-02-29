@@ -9,11 +9,7 @@ namespace Repository_Layer.Interfaces
 	public interface INoteRepository
 	{
         public NoteEntity NoteCreation(int userId, AddNotesModel addNotes);
-
-        //TODO
-        //public int NoteDeletion()
-
-        //public List<NoteEntity> GetAllNotes(FundoContext context);
+        public bool DeleteNote(int NoteId);
     }
 }
 

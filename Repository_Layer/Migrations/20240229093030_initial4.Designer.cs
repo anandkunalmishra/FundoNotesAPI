@@ -12,8 +12,8 @@ using Repository_Layer.Context;
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(FundoContext))]
-    [Migration("20240228095816_addinventory1")]
-    partial class addinventory1
+    [Migration("20240229093030_initial4")]
+    partial class initial4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,11 @@ namespace RepositoryLayer.Migrations
                     b.Property<bool>("IsTrash")
                         .HasColumnType("bit");
 
-                    b.Property<string>("NoteText")
+                    b.Property<string>("NoteDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NoteTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

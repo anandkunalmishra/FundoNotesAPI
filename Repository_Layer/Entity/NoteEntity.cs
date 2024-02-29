@@ -11,7 +11,9 @@ namespace Repository_Layer.Entity
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int NoteId { get; set; }
 
-		public string NoteText { get; set; }
+		public string NoteTitle { get; set; }
+
+		public string NoteDescription { get; set; }
 
 		public string colour { get; set; }
 

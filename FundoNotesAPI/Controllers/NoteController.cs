@@ -22,7 +22,7 @@ namespace FundoNotesAPI.Controllers
 		[Authorize]
 		[HttpPost]
 		[Route("addNote")]
-		public ActionResult AddNotes(AddNotesModel addNotes)
+		public ActionResult AddNote(AddNotesModel addNotes)
 		{
 			try
 			{
@@ -44,7 +44,32 @@ namespace FundoNotesAPI.Controllers
                 return BadRequest(new ResModel<NoteEntity> { Success = false, Message = ex.Message, Data = null });
             }
 		}
+		
+        [Authorize]
+        [HttpDelete]
+        [Route("deleteNote")]
+        public ActionResult DeleteNote(int NoteId)
+		{
+			try
+			{   int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+				if (userId!=null)
+				{
+					var response = noteManager.DeleteNote(NoteId);
+					return BadRequest(new ResModel<bool> { Success = true, Message = "Delete Successful", Data = true });
+				}
+				else
+				{
+					return BadRequest(new ResModel<bool> { Success = true, Message = "Delete Unsuccessful", Data = false });
+				}
+            }
+			catch(Exception ex)
+			{
+                return BadRequest(new ResModel<bool> { Success = true, Message = ex.Message, Data = false });
+            }
+		}
 
-	}
+
+
+    }
 }
 
