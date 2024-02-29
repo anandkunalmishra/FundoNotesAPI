@@ -87,6 +87,39 @@ namespace Repository_Layer.Services
                 throw;
             }
         }
+
+        public bool UpdateNote(int NoteId,UpdateNotesModel model)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (model.NoteDescription != null)
+                    {
+                        note.NoteDescription = model.NoteDescription;
+                    }
+                    if (model.NoteTitle != null)
+                    {
+                        note.NoteTitle = model.NoteTitle;
+                    }
+                    note.UpdatedAt = DateTime.UtcNow;
+
+                    context.NotesTable.Update(note);
+                    context.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
 

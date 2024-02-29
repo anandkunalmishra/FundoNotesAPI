@@ -91,8 +91,36 @@ namespace FundoNotesAPI.Controllers
                 return BadRequest(new ResModel<List<NoteEntity>> { Success = true, Message = ex.Message, Data = null });
             }
         }
-
-
+        [Authorize]
+        [HttpPut]
+        [Route("getNotes")]
+        public ActionResult UpdateNote(int NoteId,UpdateNotesModel model)
+		{
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UpdateNote(userId,model);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return  BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
 
 
     }

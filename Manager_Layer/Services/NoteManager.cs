@@ -29,7 +29,10 @@ namespace Manager_Layer.Services
 		{
 			return noteRepository.GetAllNotes(UserId);
 		}
-
+        public bool UpdateNote(int NoteId, UpdateNotesModel model)
+		{
+			return noteRepository.UpdateNote(NoteId, model);
+		}
     }
 }
 

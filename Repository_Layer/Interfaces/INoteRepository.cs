@@ -11,6 +11,7 @@ namespace Repository_Layer.Interfaces
         public NoteEntity NoteCreation(int userId, AddNotesModel addNotes);
         public bool DeleteNote(int NoteId);
         public List<NoteEntity> GetAllNotes(int UserId);
+        public bool UpdateNote(int NoteId, UpdateNotesModel model);
     }
 }
 
