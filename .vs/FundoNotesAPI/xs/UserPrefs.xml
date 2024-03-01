@@ -2,44 +2,43 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/UserController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Services/NoteRepository.cs">
     <Files>
-      <File FileName="FundoNotesAPI/Program.cs" />
-      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="Repository_Layer/Services/UserRepository.cs" />
-      <File FileName="Common_Layer/RequestModel/ResetPasswordModel.cs" />
-      <File FileName="Repository_Layer/Interfaces/IUserRepository.cs" />
-      <File FileName="Manager_Layer/Interfaces/IUserManager.cs" />
-      <File FileName="Manager_Layer/Services/UserManager.cs" />
-      <File FileName="Common_Layer/ResponseModel/ResModel.cs" />
-      <File FileName="Repository_Layer/Entity/NoteEntity.cs" />
-      <File FileName="Repository_Layer/Interfaces/INoteRepository.cs" />
-      <File FileName="Repository_Layer/Services/NoteRepository.cs" />
-      <File FileName="Common_Layer/RequestModel/AddNotesModel.cs" />
-      <File FileName="Common_Layer/RequestModel/DeleteNotesModel.cs" />
-      <File FileName="Manager_Layer/Services/NoteManager.cs" />
-      <File FileName="Manager_Layer/Interfaces/INoteManager.cs" />
-      <File FileName="FundoNotesAPI/Controllers/NoteController.cs" />
-      <File FileName="Repository_Layer/Entity/InventoryEntity.cs" />
-      <File FileName="Repository_Layer/Context/InventoryContext.cs" />
-      <File FileName="Repository_Layer/Context/FundoContext.cs" />
-      <File FileName="FundoNotesAPI/appsettings.json" />
+      <File FileName="Common_Layer/RequestModel/AddNotesModel.cs" Line="3" Column="2" />
+      <File FileName="Repository_Layer/Entity/NoteEntity.cs" Line="9" Column="3" />
+      <File FileName="FundoNotesAPI/Controllers/NoteController.cs" Line="139" Column="53" />
+      <File FileName="Repository_Layer/Services/NoteRepository.cs" Line="176" Column="40" />
+      <File FileName="Common_Layer/RequestModel/UpdateNotesModel.cs" Line="7" Column="46" />
+      <File FileName="Repository_Layer/Interfaces/INoteRepository.cs" Line="17" Column="21" />
+      <File FileName="Manager_Layer/Interfaces/INoteManager.cs" Line="15" Column="21" />
+      <File FileName="Manager_Layer/Services/NoteManager.cs" Line="13" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="FundoNotesAPI" expanded="True">
-            <Node name="FundoNotesAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UserController.cs" selected="True" />
-              </Node>
+          <Node name="FundoNotesAPI">
+            <Node name="Common_Layer" expanded="True">
+              <Node name="RequestModel" expanded="True" />
             </Node>
-            <Node name="Repository_Layer" expanded="True">
-              <Node name="Context" expanded="True" />
+            <Node name="FundoNotesAPI">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="Manager_Layer">
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="Repository_Layer">
               <Node name="Entity" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="NoteRepository.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

@@ -20,18 +20,39 @@ namespace Manager_Layer.Services
 			return noteRepository.NoteCreation(userId,addNotes);
 		}
 
-        public bool DeleteNote(int NoteId)
-		{
-			return noteRepository.DeleteNote(NoteId);
+        public bool DeleteNote(int UserId, int NoteId)
+        {
+			return noteRepository.DeleteNote(UserId,NoteId);
 		}
 
         public List<NoteEntity> GetAllNotes(int UserId)
 		{
 			return noteRepository.GetAllNotes(UserId);
 		}
-        public bool UpdateNote(int NoteId, UpdateNotesModel model)
+
+        public bool UpdateNote(int UserId,int NoteId, UpdateNotesModel model)
 		{
-			return noteRepository.UpdateNote(NoteId, model);
+			return noteRepository.UpdateNote(UserId,NoteId, model);
+		}
+
+        public bool UpdatePin(int UserId,int NoteId)
+		{
+			return noteRepository.UpdatePin(UserId,NoteId);
+		}
+
+        public bool UpdateTrash(int UserId,int NoteId)
+		{
+			return noteRepository.UpdateTrash(UserId,NoteId);
+		}
+
+        public bool UpdateArchive(int UserId,int NoteId)
+		{
+			return noteRepository.UpdateArchive(UserId,NoteId);
+		}
+
+        public bool UpdateColor(int UserId, int NoteId, UpdateNoteModel model)
+		{
+			return noteRepository.UpdateColor(UserId, NoteId, model);
 		}
     }
 }

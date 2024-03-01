@@ -54,7 +54,7 @@ namespace FundoNotesAPI.Controllers
 			{   int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
 				if (userId!=null)
 				{
-					var response = noteManager.DeleteNote(NoteId);
+					var response = noteManager.DeleteNote(userId,NoteId);
 					return Ok(new ResModel<bool> { Success = true, Message = "Delete Successful", Data = true });
 				}
 				else
@@ -91,9 +91,11 @@ namespace FundoNotesAPI.Controllers
                 return BadRequest(new ResModel<List<NoteEntity>> { Success = true, Message = ex.Message, Data = null });
             }
         }
+
+
         [Authorize]
-        [HttpPut]
-        [Route("getNotes")]
+        [HttpPatch]
+        [Route("UpdateNote")]
         public ActionResult UpdateNote(int NoteId,UpdateNotesModel model)
 		{
             try
@@ -101,7 +103,7 @@ namespace FundoNotesAPI.Controllers
                 int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
                 if (userId != null)
                 {
-                    var response = noteManager.UpdateNote(userId,model);
+                    var response = noteManager.UpdateNote(userId,NoteId,model);
                     if (response)
                     {
                         return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
@@ -122,6 +124,131 @@ namespace FundoNotesAPI.Controllers
             }
         }
 
+
+
+        [Authorize]
+        [HttpPut]
+        [Route("updatePin")]
+        public ActionResult UpdatePin(int NoteId)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UpdatePin(userId,NoteId);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("updateTrash")]
+        public ActionResult UpdateTrash(int NoteId)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UpdateTrash(userId,NoteId);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("updateArchive")]
+        public ActionResult UpdateArchive(int NoteId)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UpdateArchive(userId,NoteId);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("updateColour")]
+        public ActionResult UpdateColour(int UserId,int NoteId,UpdateNoteModel model)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UpdateArchive(userId, NoteId);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
 
     }
 }

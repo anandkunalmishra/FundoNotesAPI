@@ -7,6 +7,8 @@ using Repository_Layer.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Drawing;
 using System.IO.Compression;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace Repository_Layer.Services
 {
@@ -52,16 +54,23 @@ namespace Repository_Layer.Services
             }
             
         }
-        public bool DeleteNote(int NoteId)
+        public bool DeleteNote(int UserId,int NoteId)
         {
             try
             {
                 var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
                 if (note != null)
                 {
-                    context.NotesTable.Remove(note);
-                    context.SaveChanges();
-                    return true;
+                    if (note.userId == UserId)
+                    {
+                        context.NotesTable.Remove(note);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
                 }
                 return false;
             }
@@ -88,31 +97,218 @@ namespace Repository_Layer.Services
             }
         }
 
-        public bool UpdateNote(int NoteId,UpdateNotesModel model)
+        public bool UpdateNote(int UserId,int NoteId,UpdateNotesModel model)
         {
             try
             {
                 var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
                 if (note != null)
                 {
-                    if (model.NoteDescription != null)
+                    if (note.userId==UserId)
                     {
-                        note.NoteDescription = model.NoteDescription;
+                        if (model.NoteDescription != null)
+                        {
+                            note.NoteDescription = model.NoteDescription;
+                        }
+                        if (model.NoteTitle != null)
+                        {
+                            note.NoteTitle = model.NoteTitle;
+                        }
+                        note.UpdatedAt = DateTime.UtcNow;
+
+                        context.NotesTable.Update(note);
+                        context.SaveChanges();
+
+                        return true;
                     }
-                    if (model.NoteTitle != null)
+                    else
                     {
-                        note.NoteTitle = model.NoteTitle;
+                        throw new Exception($"You don't have the access");
                     }
-                    note.UpdatedAt = DateTime.UtcNow;
-
-                    context.NotesTable.Update(note);
-                    context.SaveChanges();
-
-                    return true;
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Note doesn't exist");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public bool UpdatePin(int UserId,int NoteId)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (note.userId == UserId)
+                    {
+                        if (note.IsPin)
+                        {
+                            note.IsPin = false;
+                        }
+                        else
+                        {
+                            note.IsPin = true;
+                        }
+                        note.UpdatedAt = DateTime.UtcNow;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Note with note id {NoteId} doesn't exist");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public bool UpdateTrash(int UserId,int NoteId)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (note.userId == UserId)
+                    {
+                        if (note.IsTrash)
+                        {
+                            note.IsTrash = false;
+                        }
+                        else
+                        {
+                            note.IsTrash = true;
+                        }
+                        note.UpdatedAt = DateTime.UtcNow;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Note with note id {NoteId} doesn't exist");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        public bool UpdateArchive(int UserId,int NoteId)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (note.userId == UserId)
+                    {
+                        if (note.IsArchive)
+                        {
+                            note.IsArchive = false;
+                        }
+                        else
+                        {
+                            note.IsArchive = true;
+                        }
+                        note.UpdatedAt = DateTime.UtcNow;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Note with note id {NoteId} doesn't exist");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public bool UpdateColor(int UserId,int NoteId,UpdateNoteModel model)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (note.userId == UserId)
+                    {
+                        note.colour = model.colour;
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Note with note id {NoteId} doesn't exist");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public bool UploadImage(string filePath,int NoteId,int UserId)
+        {
+            try
+            {
+                var note = context.NotesTable.FirstOrDefault(x => x.NoteId == NoteId);
+                if (note != null)
+                {
+                    if (note.userId == UserId)
+                    {
+                        Account account = new Account();
+                        Cloudinary cloudinary = new Cloudinary();
+                        ImageUploadParams uploadParams = new ImageUploadParams
+                        {
+                            File = new FileDescription(filePath),
+                            PublicId = note.NoteTitle
+                        };
+                        ImageUploadResult uploadResult = cloudinary.Upload(uploadParams);
+
+                        note.UpdatedAt = DateTime.UtcNow;
+                        note.background = uploadResult.Url.ToString();
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("You don't have access");
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Note with note id {NoteId} doesn't exist");
                 }
             }
             catch
