@@ -1,18 +1,13 @@
-﻿
-using System;
-using Common_Layer.RequestModel;
+﻿using Common_Layer.RequestModel;
 using Repository_Layer.Entity;
 using Repository_Layer.Context;
 using Repository_Layer.Interfaces;
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Drawing;
-using System.IO.Compression;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 
 namespace Repository_Layer.Services
 {
-	public class NoteRepository:INoteRepository
+    public class NoteRepository:INoteRepository
 	{
         public readonly FundoContext context;
         public NoteRepository(FundoContext context)
@@ -287,8 +282,8 @@ namespace Repository_Layer.Services
                 {
                     if (note.userId == UserId)
                     {
-                        Account account = new Account();
-                        Cloudinary cloudinary = new Cloudinary();
+                        Account account = new Account("diu0dzuph", "151566961183183", "kPNIAx62USDiH2zqIdQBmEt54t0");
+                        Cloudinary cloudinary = new Cloudinary(account);
                         ImageUploadParams uploadParams = new ImageUploadParams
                         {
                             File = new FileDescription(filePath),

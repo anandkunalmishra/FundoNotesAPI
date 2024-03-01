@@ -14,6 +14,7 @@ namespace Manager_Layer.Interfaces
         public bool UpdateTrash(int UserId, int NoteId);
         public bool UpdateArchive(int UserId, int NoteId);
         public bool UpdateColor(int UserId, int NoteId, UpdateNoteModel model);
+        public bool UploadImage(string filePath, int NoteId, int UserId);
     }
 }
 

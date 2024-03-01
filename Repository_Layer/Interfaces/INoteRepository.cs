@@ -1,12 +1,10 @@
-﻿using System;
-using Common_Layer.RequestModel;
-using Repository_Layer.Context;
+﻿using Common_Layer.RequestModel;
 using Repository_Layer.Entity;
 
 namespace Repository_Layer.Interfaces
 {
 
-	public interface INoteRepository
+    public interface INoteRepository
 	{
         public NoteEntity NoteCreation(int userId, AddNotesModel addNotes);
         public bool DeleteNote(int UserId, int NoteId);
@@ -16,6 +14,7 @@ namespace Repository_Layer.Interfaces
         public bool UpdateTrash(int UserId,int NoteId);
         public bool UpdateArchive(int UserId,int NoteId);
         public bool UpdateColor(int UserId, int NoteId, UpdateNoteModel model);
+        public bool UploadImage(string filePath, int NoteId, int UserId);
     }
 }
 

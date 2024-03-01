@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repository_Layer.Entity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Repository_Layer.Context
 {

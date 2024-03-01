@@ -250,6 +250,37 @@ namespace FundoNotesAPI.Controllers
             }
         }
 
+        [Authorize]
+        [HttpPut]
+        [Route("uploadImage")]
+        public ActionResult UploadImage(string filePath,int NoteId)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                if (userId != null)
+                {
+                    var response = noteManager.UploadImage(filePath,userId, NoteId);
+                    if (response)
+                    {
+                        return Ok(new ResModel<bool> { Success = true, Message = "Update Successful", Data = response });
+                    }
+                    else
+                    {
+                        return BadRequest(new ResModel<bool> { Success = true, Message = "Update Unsuccessful", Data = response });
+                    }
+                }
+                else
+                {
+                    return BadRequest(new ResModel<NoteEntity> { Success = true, Message = "User Doesn't exist", Data = null });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<NoteEntity> { Success = true, Message = ex.Message, Data = null });
+            }
+        }
+
     }
 }
 
