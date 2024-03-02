@@ -7,8 +7,10 @@ namespace Manager_Layer.Interfaces
 	public interface IUserManager
 	{
 		public UserEntity UserRegisteration(RegisterModel model);
-		public UserEntity UserLogin(LoginModel model);
-		public string GenerateToken(UserEntity user);
+		public string UserLogin(LoginModel model);
+		public ForgetPasswordModel ForgetPassword(string Email);
+        public bool ResetPassword(string Email, ResetPasswordModel reset);
+        public bool checker(string Email);
     }
 }
 

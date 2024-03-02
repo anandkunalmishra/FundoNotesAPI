@@ -17,14 +17,25 @@ namespace Manager_Layer.Services
 		{
 			return repository.UserRegisteration(model);
 		}
-        public UserEntity UserLogin(LoginModel model)
+
+        public string UserLogin(LoginModel model)
         {
 			return repository.UserLogin(model);
 		}
 
-        public string GenerateToken(UserEntity user)
+        public ForgetPasswordModel ForgetPassword(string Email)
 		{
-			return repository.GenerateToken(user);
+			return repository.ForgetPassword(Email);
+		}
+
+        public bool checker(string Email)
+		{
+			return repository.checker(Email);
+		}
+
+        public bool ResetPassword(string Email, ResetPasswordModel reset)
+		{
+			return repository.ResetPassword(Email, reset);
 		}
     }
 }

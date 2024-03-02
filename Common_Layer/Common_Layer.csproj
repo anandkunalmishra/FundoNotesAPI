@@ -16,9 +16,11 @@
   <ItemGroup>
     <None Remove="RequestModel\" />
     <None Remove="ResponseModel\" />
+    <None Remove="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RequestModel\" />
     <Folder Include="ResponseModel\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
 </Project>

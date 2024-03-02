@@ -1,58 +1,41 @@
 ﻿<Properties StartupConfiguration="{695C7117-EDBE-487C-AFAF-58A7781A2AD7}|https">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Services/UserRepository.cs">
-    <Files>
-      <File FileName="Repository_Layer/Services/UserRepository.cs" Line="13" Column="19" />
-      <File FileName="FundoNotesAPI/appsettings.json" Line="12" Column="5" />
-=======
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Services/UserRepository.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repository_Layer/Migrations/20240301121137_label3.Designer.cs">
     <Files>
-      <File FileName="FundoNotesAPI/Controllers/UserController.cs" Line="44" Column="1" />
-      <File FileName="Common_Layer/RequestModel/LoginModel.cs" Line="1" Column="1" />
-      <File FileName="FundoNotesAPI/Program.cs" Line="7" Column="1" />
-      <File FileName="Manager_Layer/Services/UserManager.cs" Line="24" Column="6" />
-      <File FileName="Repository_Layer/Services/Encryption.cs" Line="1" Column="1" />
-      <File FileName="Repository_Layer/Services/UserRepository.cs" Line="1" Column="1" />
->>>>>>> refs/remotes/origin/Login_Method_Creation
+      <File FileName="Repository_Layer/Context/FundoContext.cs" />
+      <File FileName="FundoNotesAPI/Controllers/UserController.cs" />
+      <File FileName="Repository_Layer/Entity/UserEntity.cs" />
+      <File FileName="Repository_Layer/Entity/NoteEntity.cs" Line="12" Column="34" />
+      <File FileName="FundoNotesAPI/Controllers/NoteController.cs" />
+      <File FileName="Repository_Layer/Services/LabelRepository.cs" />
+      <File FileName="Repository_Layer/Interfaces/ILabelRepository.cs" />
+      <File FileName="Repository_Layer/Services/NoteRepository.cs" />
+      <File FileName="Repository_Layer/Entity/LabelEntity.cs" Line="22" Column="2" />
+      <File FileName="Repository_Layer/Migrations/FundoContextModelSnapshot.cs" />
+      <File FileName="Repository_Layer/Migrations/20240301121137_label3.Designer.cs" Line="157" Column="58" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-<<<<<<< HEAD
           <Node name="FundoNotesAPI" expanded="True">
-            <Node name="FundoNotesAPI">
-              <Node name="Controllers" expanded="True" />
-            </Node>
             <Node name="Repository_Layer">
-              <Node name="Services">
-=======
-          <Node name="FundoNotesAPI">
-            <Node name="Repository_Layer" expanded="True">
-              <Node name="Services" expanded="True">
->>>>>>> refs/remotes/origin/Login_Method_Creation
-                <Node name="UserRepository.cs" selected="True" />
+              <Node name="Entity" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20240301121137_label3.cs" expanded="True">
+                  <Node name="20240301121137_label3.Designer.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-=======
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
->>>>>>> refs/remotes/origin/Login_Method_Creation
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
