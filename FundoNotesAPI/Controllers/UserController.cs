@@ -44,6 +44,7 @@ namespace FundoNotesAPI.Controllers
             }
 			catch(Exception ex)
 			{
+				logger.LogInformation("Some Exception occured");
 				return BadRequest(new ResModel<UserEntity> { Success = false, Message = ex.Message, Data = null });
 			}
 			
