@@ -5,8 +5,6 @@ using Common_Layer.RequestModel;
 using Common_Layer.ResponseModel;
 using Repository_Layer.Entity;
 using Common_Layer.Utility;
-using Repository_Layer.Interfaces;
-using Azure;
 using MassTransit;
 
 namespace FundoNotesAPI.Controllers
@@ -17,11 +15,13 @@ namespace FundoNotesAPI.Controllers
 	{
 		private readonly IUserManager userManager;
 		private readonly IBus bus;
+		private readonly ILogger<UserController> logger;
 
-		public UserController(IUserManager userManager,IBus bus)
+		public UserController(IUserManager userManager,IBus bus, ILogger<UserController> logger)
 		{
 			this.userManager = userManager;
 			this.bus = bus;
+			this.logger = logger;
 		}
 
 		[HttpPost]
@@ -34,6 +34,7 @@ namespace FundoNotesAPI.Controllers
 
                 if (response != null)
                 {
+					logger.LogInformation("Register Successful");
                     return Ok(new ResModel<UserEntity> { Success = true, Message = "Registered Successfully", Data = response });
                 }
                 else

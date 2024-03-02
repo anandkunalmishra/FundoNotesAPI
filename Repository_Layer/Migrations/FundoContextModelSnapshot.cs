@@ -22,6 +22,33 @@ namespace RepositoryLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Repository_Layer.Entity.LabelEntity", b =>
+                {
+                    b.Property<int>("LabelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LabelId"));
+
+                    b.Property<string>("LabelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NoteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LabelId");
+
+                    b.HasIndex("NoteId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("LabelTable");
+                });
+
             modelBuilder.Entity("Repository_Layer.Entity.NoteEntity", b =>
                 {
                     b.Property<int>("NoteId")
@@ -98,6 +125,25 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("userId");
 
                     b.ToTable("UserTable");
+                });
+
+            modelBuilder.Entity("Repository_Layer.Entity.LabelEntity", b =>
+                {
+                    b.HasOne("Repository_Layer.Entity.NoteEntity", "LabelFor")
+                        .WithMany()
+                        .HasForeignKey("NoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Repository_Layer.Entity.UserEntity", "LabelBy")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LabelBy");
+
+                    b.Navigation("LabelFor");
                 });
 
             modelBuilder.Entity("Repository_Layer.Entity.NoteEntity", b =>
