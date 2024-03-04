@@ -65,13 +65,23 @@ namespace Repository_Layer.Services
             throw new Exception("label doesn't exist");
         }
 
-        //public LabelEntity GetAllLabel(int UserId)
-        //{
-        //    if (context.UserTable.FirstOrDefault(x => x.userId == UserId) != null)
-        //    {
-        //        var LabelsByUser = context.LabelTable.Where(x=>x.UserId==UserId).GroupBy(l=>l)
-        //    }
-        //}
+        public List<string> GetAllLabel(int UserId)
+        {
+            if (context.UserTable.FirstOrDefault(x => x.userId == UserId) != null)
+            {
+                var LabelsByUser = context.LabelTable
+                    .Where(x => x.UserId == UserId)
+                    .GroupBy(l => l.LabelName)
+                    .Select(group => group.First().LabelName).ToList();
+
+                if (LabelsByUser != null)
+                {
+                    return LabelsByUser;
+                }
+                throw new Exception("Some Error occured");
+            }
+            throw new Exception("Some Error occured");
+        }
     }
 }
 

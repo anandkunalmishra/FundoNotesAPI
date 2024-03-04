@@ -6,6 +6,7 @@ using Common_Layer.ResponseModel;
 using Repository_Layer.Entity;
 using Common_Layer.Utility;
 using MassTransit;
+using Serilog;
 
 namespace FundoNotesAPI.Controllers
 {
@@ -15,26 +16,26 @@ namespace FundoNotesAPI.Controllers
 	{
 		private readonly IUserManager userManager;
 		private readonly IBus bus;
-		private readonly ILogger<UserController> logger;
 
-		public UserController(IUserManager userManager,IBus bus, ILogger<UserController> logger)
+		public UserController(IUserManager userManager,IBus bus)
 		{
 			this.userManager = userManager;
 			this.bus = bus;
-			this.logger = logger;
 		}
 
 		[HttpPost]
 		[Route("reg")]
 		public ActionResult Register(RegisterModel model)
 		{
-			try
+            Log.Information("Hello World");
+            try
 			{
+				//Log.Information();
                 var response = userManager.UserRegisteration(model);
 
                 if (response != null)
                 {
-					logger.LogInformation("Register Successful");
+					Log.Information("Register Successful");
                     return Ok(new ResModel<UserEntity> { Success = true, Message = "Registered Successfully", Data = response });
                 }
                 else
@@ -44,7 +45,7 @@ namespace FundoNotesAPI.Controllers
             }
 			catch(Exception ex)
 			{
-				logger.LogInformation("Some Exception occured");
+				Log.Information("Some Exception occured");
 				return BadRequest(new ResModel<UserEntity> { Success = false, Message = ex.Message, Data = null });
 			}
 			

@@ -1,5 +1,8 @@
 ﻿<Properties StartupConfiguration="{695C7117-EDBE-487C-AFAF-58A7781A2AD7}|https">
+<<<<<<< HEAD
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+=======
+>>>>>>> LabelTable-getall
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="FundoNotesAPI/Controllers/LabelController.cs">
     <Files>
@@ -38,9 +41,16 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+<<<<<<< HEAD
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
+=======
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FundoNotesAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+>>>>>>> LabelTable-getall
 </Properties>

@@ -1,27 +1,38 @@
-﻿using Repository_Layer.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
 using Manager_Layer.Interfaces;
 using Manager_Layer.Services;
+using MassTransit;
+using Microsoft.EntityFrameworkCore;
+using Repository_Layer.Context;
 using Repository_Layer.Interfaces;
 using Repository_Layer.Services;
-using MassTransit;
-using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using NLog;
-using NLog.Web;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
-var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs"); // Change "LogFile" to "Logs" for better naming convention
 
-GlobalDiagnosticsContext.Set("myvar", logPath);
-
-// Add services to the container.
+// Add services to the container
 builder.Services.AddControllers();
-builder.Services.AddDbContext<FundoContext>(x => x.UseSqlServer(builder.Configuration["ConnectionStrings:FundoAppdb"]));
+builder.Services.AddDbContext<FundoContext>(x => x.UseSqlServer(config["ConnectionStrings:FundoAppdb"]));
+builder.Services.AddTransient<IUserManager, UserManager>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<INoteManager, NoteManager>();
+builder.Services.AddTransient<INoteRepository, NoteRepository>();
+builder.Services.AddTransient<ILabelManager, LabelManager>();
+builder.Services.AddTransient<ILabelRepository, LabelRepository>();
 
+
+//Add Serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("logs/LogValue-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+Log.Information("This is the Logger");
 // Add authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -81,22 +92,9 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-// Add dependencies
-builder.Services.AddTransient<IUserManager, UserManager>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
-builder.Services.AddTransient<INoteManager, NoteManager>();
-builder.Services.AddTransient<INoteRepository, NoteRepository>();
-builder.Services.AddTransient<ILabelManager, LabelManager>();
-builder.Services.AddTransient<ILabelRepository, LabelRepository>();
-
-// Configure logging
-builder.Logging.ClearProviders();
-builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug);
-builder.Host.UseNLog();
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

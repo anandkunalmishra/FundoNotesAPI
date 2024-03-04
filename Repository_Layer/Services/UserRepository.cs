@@ -108,6 +108,7 @@ namespace Repository_Layer.Services
             return tokenString;
 
         }
+
         public ForgetPasswordModel ForgetPassword(string Email)
 		{
 			UserEntity User = context.UserTable.FirstOrDefault(x => x.userEmail == Email);

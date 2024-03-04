@@ -5,6 +5,7 @@ using Manager_Layer.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository_Layer.Entity;
+using Serilog;
 
 namespace FundoNotesAPI.Controllers
 {
@@ -66,8 +67,23 @@ namespace FundoNotesAPI.Controllers
 		[Route("getAllLabels")]
 		public ActionResult GetAllLabel()
 		{
+            Log.Information("getting the Values");
+            try
+            {
+                int userId = Convert.ToInt32(User.FindFirst("UserId").Value);
+                var response = labelManager.GetAllLabel(userId);
+                if (response != null)
+                {
+                    return Ok(new ResModel<List<string>> { Success = true, Message = "Label addition successful", Data = response });
+                }
+                return BadRequest(new ResModel<List<string>> { Success = true, Message = "Label addition unsucessful", Data = null });
 
-		}
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ResModel<List<string>> { Success = false, Message = ex.Message, Data = null });
+            }
+        }
 	}
 }
 
