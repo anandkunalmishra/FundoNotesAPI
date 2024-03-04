@@ -22,6 +22,33 @@ namespace RepositoryLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Repository_Layer.Entity.CollabEntity", b =>
+                {
+                    b.Property<int>("CollabId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CollabId"));
+
+                    b.Property<string>("CollabEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NoteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CollabId");
+
+                    b.HasIndex("NoteId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CollabTable");
+                });
+
             modelBuilder.Entity("Repository_Layer.Entity.LabelEntity", b =>
                 {
                     b.Property<int>("LabelId")
@@ -125,6 +152,25 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("userId");
 
                     b.ToTable("UserTable");
+                });
+
+            modelBuilder.Entity("Repository_Layer.Entity.CollabEntity", b =>
+                {
+                    b.HasOne("Repository_Layer.Entity.NoteEntity", "CollabFor")
+                        .WithMany()
+                        .HasForeignKey("NoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Repository_Layer.Entity.UserEntity", "CollabBy")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CollabBy");
+
+                    b.Navigation("CollabFor");
                 });
 
             modelBuilder.Entity("Repository_Layer.Entity.LabelEntity", b =>
