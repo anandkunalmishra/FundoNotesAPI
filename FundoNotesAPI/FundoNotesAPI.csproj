@@ -26,9 +26,7 @@
     <PackageReference Include="MassTransit" Version="6.2.5" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
     <PackageReference Include="MassTransit.AspNetCore" Version="6.2.5" />
-    <PackageReference Include="NLog" Version="5.2.8" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
-    <PackageReference Include="NLog.Config" Version="4.7.15" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,9 +41,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Logs\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logs\" />
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 </Project>

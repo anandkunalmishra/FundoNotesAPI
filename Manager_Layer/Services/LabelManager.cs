@@ -24,7 +24,10 @@ namespace Manager_Layer.Services
         {
             return repository.UpdateLabel(UserId,NoteId,LabelId, model);
         }
-
+        public List<string> GetAllLabel(int UserId)
+        {
+            return repository.GetAllLabel(UserId);
+        }
     }
 }
 

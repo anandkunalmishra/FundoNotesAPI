@@ -1,0 +1,7 @@
+2024-03-04 15:53:05.366 +05:30 [INF] This is the Logger
+2024-03-04 15:53:49.200 +05:30 [INF] Some Exception occured
+2024-03-04 16:28:04.140 +05:30 [INF] This is the Logger
+2024-03-04 16:28:35.315 +05:30 [INF] Hello World
+2024-03-04 16:28:35.949 +05:30 [INF] Some Exception occured
+2024-03-04 16:30:18.342 +05:30 [INF] This is the Logger
+2024-03-04 16:30:26.137 +05:30 [INF] getting the Values
