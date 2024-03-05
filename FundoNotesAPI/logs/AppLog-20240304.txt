@@ -1,0 +1,60 @@
+2024-03-04 21:19:32 [INF] 
+<--------------------->
+2024-03-04 21:19:32 [INF] This is the Logger
+2024-03-04 21:19:33 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:19:33 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:19:33 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:19:33 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:19:33 [INF] Hosting environment: Development
+2024-03-04 21:19:33 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:19:34 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:19:34 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 78.2045ms
+2024-03-04 21:19:35 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:19:35 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 66.4824ms
+2024-03-04 21:19:52 [INF] 
+<--------------------->
+2024-03-04 21:19:52 [INF] This is the Logger
+2024-03-04 21:19:53 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:19:53 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:19:53 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:19:53 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:19:53 [INF] Hosting environment: Development
+2024-03-04 21:19:53 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:20:50 [INF] 
+<--------------------->
+2024-03-04 21:20:50 [INF] This is the Logger
+2024-03-04 21:20:51 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:20:51 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:20:51 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:20:51 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:20:51 [INF] Hosting environment: Development
+2024-03-04 21:20:51 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:20:52 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:20:52 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 118.6565ms
+2024-03-04 21:20:52 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:20:52 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.8545ms
+2024-03-04 21:22:08 [INF] Request starting HTTP/1.1 POST https://localhost:7133/api/User/login application/json 59
+2024-03-04 21:22:08 [INF] Executing endpoint 'FundoNotesAPI.Controllers.UserController.Login (FundoNotesAPI)'
+2024-03-04 21:22:08 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Login(Common_Layer.RequestModel.LoginModel) on controller FundoNotesAPI.Controllers.UserController (FundoNotesAPI).
+2024-03-04 21:22:08 [INF] Executed DbCommand (65ms) [Parameters=[@__model_userEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[userId], [u].[fName], [u].[lName], [u].[userEmail], [u].[userPassword]
+FROM [UserTable] AS [u]
+WHERE [u].[userEmail] = @__model_userEmail_0
+2024-03-04 21:22:08 [INF] Executing OkObjectResult, writing value of type 'Common_Layer.ResponseModel.ResModel`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-03-04 21:22:08 [INF] Executed action FundoNotesAPI.Controllers.UserController.Login (FundoNotesAPI) in 851.6478ms
+2024-03-04 21:22:08 [INF] Executed endpoint 'FundoNotesAPI.Controllers.UserController.Login (FundoNotesAPI)'
+2024-03-04 21:22:08 [INF] HTTP POST /api/User/login responded 200 in 948.9821 ms
+2024-03-04 21:22:08 [INF] Request finished HTTP/1.1 POST https://localhost:7133/api/User/login application/json 59 - 200 - application/json;+charset=utf-8 960.2566ms
+2024-03-04 21:24:26 [INF] 
+<--------------------->
+2024-03-04 21:24:26 [INF] This is the Logger
+2024-03-04 21:24:26 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:24:27 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:24:27 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:24:27 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:24:27 [INF] Hosting environment: Development
+2024-03-04 21:24:27 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:24:28 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:24:28 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 70.2069ms
+2024-03-04 21:24:28 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:24:28 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.6368ms

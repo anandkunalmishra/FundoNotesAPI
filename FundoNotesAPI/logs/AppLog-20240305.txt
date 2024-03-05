@@ -1,0 +1,13 @@
+2024-03-05 09:22:02 [INF] 
+<--------------------->
+2024-03-05 09:22:02 [INF] This is the Logger
+2024-03-05 09:22:03 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-05 09:22:03 [INF] Now listening on: https://localhost:7133
+2024-03-05 09:22:03 [INF] Now listening on: http://localhost:5168
+2024-03-05 09:22:03 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-05 09:22:03 [INF] Hosting environment: Development
+2024-03-05 09:22:03 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-05 09:22:05 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-05 09:22:05 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 108.3649ms
+2024-03-05 09:22:05 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-05 09:22:05 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.8360ms

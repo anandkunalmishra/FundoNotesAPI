@@ -23,16 +23,19 @@ builder.Services.AddTransient<INoteManager, NoteManager>();
 builder.Services.AddTransient<INoteRepository, NoteRepository>();
 builder.Services.AddTransient<ILabelManager, LabelManager>();
 builder.Services.AddTransient<ILabelRepository, LabelRepository>();
+builder.Services.AddTransient<ICollabManager, CollabManager>();
+builder.Services.AddTransient<ICollabRepository, CollabRepository>();
 
 
 //Add Serilog
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()
-    .WriteTo.Console()
-    .WriteTo.File("logs/LogValue-.txt", rollingInterval: RollingInterval.Day)
+    .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
+builder.Host.UseSerilog();
+Log.Information("\n<--------------------->");
 Log.Information("This is the Logger");
+
 // Add authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -103,6 +106,8 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
     });
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 app.UseRouting();

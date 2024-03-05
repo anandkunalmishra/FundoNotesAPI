@@ -1,0 +1,92 @@
+2024-03-04 21:04:16.696 +05:30 [INF] This is the Logger
+2024-03-04 21:04:25.105 +05:30 [INF] Hello World
+2024-03-04 21:04:25.759 +05:30 [INF] Some Exception occured
+2024-03-04 21:06:57.046 +05:30 [INF] This is the Logger
+2024-03-04 21:06:57.247 +05:30 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:06:57.623 +05:30 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:06:57.624 +05:30 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:06:57.625 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:06:57.625 +05:30 [INF] Hosting environment: Development
+2024-03-04 21:06:57.625 +05:30 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:06:59.062 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:06:59.137 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 76.9424ms
+2024-03-04 21:06:59.311 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:06:59.374 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 62.3897ms
+2024-03-04 21:07:06.774 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7133/api/User/reg application/json 97
+2024-03-04 21:07:06.856 +05:30 [INF] Executing endpoint 'FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI)'
+2024-03-04 21:07:06.868 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Register(Common_Layer.RequestModel.RegisterModel) on controller FundoNotesAPI.Controllers.UserController (FundoNotesAPI).
+2024-03-04 21:07:06.950 +05:30 [INF] Hello World
+2024-03-04 21:07:07.464 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__model_userEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserTable] AS [u]
+        WHERE [u].[userEmail] = @__model_userEmail_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-03-04 21:07:07.533 +05:30 [INF] Some Exception occured
+2024-03-04 21:07:07.536 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Common_Layer.ResponseModel.ResModel`1[[Repository_Layer.Entity.UserEntity, Repository_Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-04 21:07:07.540 +05:30 [INF] Executed action FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI) in 670.5734ms
+2024-03-04 21:07:07.541 +05:30 [INF] Executed endpoint 'FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI)'
+2024-03-04 21:07:07.541 +05:30 [INF] HTTP POST /api/User/reg responded 400 in 754.3324 ms
+2024-03-04 21:07:07.544 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7133/api/User/reg application/json 97 - 400 - application/json;+charset=utf-8 770.9638ms
+2024-03-04 21:10:26.666 +05:30 [INF] This is the Logger
+2024-03-04 21:10:26.876 +05:30 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:10:27.247 +05:30 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:10:27.247 +05:30 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:10:27.249 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:10:27.249 +05:30 [INF] Hosting environment: Development
+2024-03-04 21:10:27.249 +05:30 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:10:28.608 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:10:28.687 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 79.8498ms
+2024-03-04 21:10:28.829 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:10:28.903 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 74.5435ms
+2024-03-04 21:12:01.043 +05:30 [INF] <--------------------->
+2024-03-04 21:12:01.065 +05:30 [INF] This is the Logger
+2024-03-04 21:12:01.227 +05:30 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:12:01.563 +05:30 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:12:01.563 +05:30 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:12:01.564 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:12:01.564 +05:30 [INF] Hosting environment: Development
+2024-03-04 21:12:01.564 +05:30 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:12:02.912 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:12:02.993 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 82.6575ms
+2024-03-04 21:12:03.123 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:12:03.194 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 71.0072ms
+2024-03-04 21:12:57.964 +05:30 [INF] 
+<--------------------->
+2024-03-04 21:12:57.991 +05:30 [INF] This is the Logger
+2024-03-04 21:12:58.160 +05:30 [INF] User profile is available. Using '/Users/anandkunalmishra/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-04 21:12:58.548 +05:30 [INF] Now listening on: https://localhost:7133
+2024-03-04 21:12:58.549 +05:30 [INF] Now listening on: http://localhost:5168
+2024-03-04 21:12:58.550 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:12:58.550 +05:30 [INF] Hosting environment: Development
+2024-03-04 21:12:58.550 +05:30 [INF] Content root path: /Users/anandkunalmishra/Projects/FundoNotesAPI/FundoNotesAPI
+2024-03-04 21:12:59.792 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/index.html - -
+2024-03-04 21:12:59.857 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/index.html - - - 200 - text/html;charset=utf-8 66.0337ms
+2024-03-04 21:12:59.962 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - -
+2024-03-04 21:13:00.028 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7133/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.7982ms
+2024-03-04 21:14:20.961 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7133/api/User/reg application/json 105
+2024-03-04 21:14:21.045 +05:30 [INF] Executing endpoint 'FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI)'
+2024-03-04 21:14:21.056 +05:30 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Register(Common_Layer.RequestModel.RegisterModel) on controller FundoNotesAPI.Controllers.UserController (FundoNotesAPI).
+2024-03-04 21:14:21.138 +05:30 [INF] Hello World
+2024-03-04 21:14:21.670 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__model_userEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserTable] AS [u]
+        WHERE [u].[userEmail] = @__model_userEmail_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-03-04 21:14:21.860 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTable] ([fName], [lName], [userEmail], [userPassword])
+OUTPUT INSERTED.[userId]
+VALUES (@p0, @p1, @p2, @p3);
+2024-03-04 21:14:21.867 +05:30 [INF] Register Successful
+2024-03-04 21:14:21.870 +05:30 [INF] Executing OkObjectResult, writing value of type 'Common_Layer.ResponseModel.ResModel`1[[Repository_Layer.Entity.UserEntity, Repository_Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-04 21:14:21.874 +05:30 [INF] Executed action FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI) in 816.7189ms
+2024-03-04 21:14:21.875 +05:30 [INF] Executed endpoint 'FundoNotesAPI.Controllers.UserController.Register (FundoNotesAPI)'
+2024-03-04 21:14:21.875 +05:30 [INF] HTTP POST /api/User/reg responded 200 in 906.4465 ms
+2024-03-04 21:14:21.878 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7133/api/User/reg application/json 105 - 200 - application/json;+charset=utf-8 917.9433ms
